@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[小米飯De吐槽地]]></title>
+  <subtitle><![CDATA[问君能有几多愁，恰似听那PDM讲需求。]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://zfanswer.github.io/"/>
+  <updated>2015-08-28T06:03:08.000Z</updated>
+  <id>http://zfanswer.github.io/</id>
+  
+  <author>
+    <name><![CDATA[小米飯]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://zfanswer.github.io/2015/08/28/hello-world/"/>
+    <id>http://zfanswer.github.io/2015/08/28/hello-world/</id>
+    <published>2015-08-28T07:15:11.000Z</published>
+    <updated>2015-08-28T06:03:08.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[test]]></title>
+    <link href="http://zfanswer.github.io/2015/08/28/test/"/>
+    <id>http://zfanswer.github.io/2015/08/28/test/</id>
+    <published>2015-08-28T06:22:03.000Z</published>
+    <updated>2015-08-28T08:02:29.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="用ufw替代iptables">用ufw替代iptables</h1><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">wget <span class="string">https:</span><span class="comment">//launchpad.net/ufw/0.33/0.33/+download/ufw-0.33.tar.gz</span></span><br><span class="line">tar zxvf ufw-<span class="number">0.33</span>.tar.gz</span><br><span class="line">cd ufw-<span class="number">0.33</span></span><br><span class="line">python ./setup.py install</span><br><span class="line">chmod -R g-w <span class="regexp">/etc/</span>ufw <span class="regexp">/lib/</span>ufw <span class="regexp">/etc/</span><span class="keyword">default</span><span class="regexp">/ufw /</span>usr<span class="regexp">/sbin/</span>ufw</span><br></pre></td></tr></table></figure>
+<p>安装完后查看ufw是否启动了<code>ufw status</code>，是inactive的情况下进行如下操作。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ufw <span class="operator"><span class="keyword">reset</span></span><br><span class="line">ufw <span class="keyword">default</span> deny</span><br><span class="line">ufw <span class="keyword">allow</span> <span class="number">22</span></span><br><span class="line">ufw <span class="keyword">allow</span> <span class="number">80</span></span><br><span class="line">ufw <span class="keyword">allow</span> <span class="number">443</span></span><br><span class="line">ufw <span class="keyword">allow</span> <span class="number">21</span></span><br><span class="line">ufw <span class="keyword">allow</span> <span class="number">60000</span>:<span class="number">60099</span>/tcp</span><br><span class="line">ufw <span class="keyword">allow</span> <span class="number">943</span></span><br><span class="line">ufw <span class="keyword">allow</span> <span class="number">1194</span></span><br><span class="line"></span><br><span class="line">ufw <span class="keyword">enable</span></span></span><br></pre></td></tr></table></figure>
+<p>22是ssh，80是http，443是https，21是ftp，<code>60000:60099/tcp</code>是ftp over tls时设置的port域，943和1194是openvpn。<br>其他的port根据需要自己再添加。</p>
+<h5 id="打开log转发">打开log转发</h5><p>创建<code>vi /etc/rsyslog.d/20-ufw.conf</code>，内容如下</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:msg,<span class="keyword">contains</span>,<span class="string">"[UFW "</span> /var/<span class="command">log</span>/ufw.<span class="command">log</span></span><br></pre></td></tr></table></figure>
+<p>重启 rsyslog service</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">service</span> rsyslog restart</span><br></pre></td></tr></table></figure>
+<p>然后就可以看到log出现在 <code>/var/log/ufw.log</code>，很多攻击信息的。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="用ufw替代iptables">用ufw替代iptables</h1><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><b]]>
+    </summary>
+    
+      <category term="CentOS" scheme="http://zfanswer.github.io/tags/CentOS/"/>
+    
+  </entry>
+  
+</feed>
