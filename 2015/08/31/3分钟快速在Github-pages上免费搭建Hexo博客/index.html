@@ -13,7 +13,7 @@ Hexo的配置真是超乎想象得简单，以至于我手都放在键盘上却�
 <meta property="og:site_name" content="小米飯De吐槽地">
 <meta property="og:description" content="前言搜索Markdown和Evernote时无意之中发现了Hexo，一个支持Markdown的静态博客框架，本人界面控，看见 http://hexo.io 的页面就走不动了。
 Hexo的配置真是超乎想象得简单，以至于我手都放在键盘上却不知道从何说起了。官方文档还有非常完善的中文版本，本人是只读了官方文档就搭好了，有想自己体验的同学可以移步 https://hexo.io/zh-cn/docs/ 。">
-<meta property="og:updated_time" content="2015-08-31T15:21:27.000Z">
+<meta property="og:updated_time" content="2015-08-31T15:41:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3分钟快速在Github pages上免费搭建Hexo博客">
 <meta name="twitter:description" content="前言搜索Markdown和Evernote时无意之中发现了Hexo，一个支持Markdown的静态博客框架，本人界面控，看见 http://hexo.io 的页面就走不动了。
@@ -246,9 +246,6 @@ Hexo的配置真是超乎想象得简单，以至于我手都放在键盘上却�
 <li>前往<a href="https://github.com" target="_blank" rel="external">Github</a>，注册用户，这里以<code>dummy</code>为用户名做示范。</li>
 <li>登录，在主页右下方点击<strong>New Repository</strong>，注意Repository Name必须符合这个格式<code>你的用户名.github.io</code>，本例子应该就是<code>dummy.github.io</code></li>
 <li>然后进入这个repository的页面，找到这个repository https的地址，例如<code>https://github.com/dummy/dummy.github.io.git</code></li>
-<li><p>为Hexo工作目录初始化Git</p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Dropbox/hexo</span><br><span class="line">git init</span><br><span class="line">git commit --allow-empty -m <span class="string">'first commit'</span></span><br><span class="line">git remote add origin https://github.com/dummy/dummy.github.io.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-</li>
 <li><p>修改hexo的配置文件</p>
  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Dropbox/hexo</span><br><span class="line">vi _config.yml</span><br></pre></td></tr></table></figure>
 <p> 在<code># Deployment</code>部分，修改内容为如下</p>
