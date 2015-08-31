@@ -4,7 +4,7 @@
   <subtitle><![CDATA[问君能有几多愁，恰似听那PDM讲需求。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://zfanswer.github.io/"/>
-  <updated>2015-08-28T06:03:08.000Z</updated>
+  <updated>2015-08-31T15:21:27.000Z</updated>
   <id>http://zfanswer.github.io/</id>
   
   <author>
@@ -15,48 +15,111 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://zfanswer.github.io/2015/08/28/hello-world/"/>
-    <id>http://zfanswer.github.io/2015/08/28/hello-world/</id>
-    <published>2015-08-28T07:15:11.000Z</published>
-    <updated>2015-08-28T06:03:08.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
+    <title><![CDATA[3分钟快速在Github pages上免费搭建Hexo博客]]></title>
+    <link href="http://zfanswer.github.io/2015/08/31/3%E5%88%86%E9%92%9F%E5%BF%AB%E9%80%9F%E5%9C%A8Github-pages%E4%B8%8A%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://zfanswer.github.io/2015/08/31/3分钟快速在Github-pages上免费搭建Hexo博客/</id>
+    <published>2015-08-31T04:53:42.000Z</published>
+    <updated>2015-08-31T15:21:27.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>搜索Markdown和Evernote时无意之中发现了<strong>Hexo</strong>，一个支持Markdown的静态博客框架，本人界面控，看见 <a href="http://hexo.io" target="_blank" rel="external">http://hexo.io</a> 的页面就走不动了。</p>
+<p><strong>Hexo</strong>的配置真是超乎想象得简单，以至于我手都放在键盘上却不知道从何说起了。官方文档还有非常完善的中文版本，本人是只读了官方文档就搭好了，有想自己体验的同学可以移步 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a> 。</p>
+<p><strong>注意：</strong>本文所写步骤是在 Mac Yosemite 10.10 上完成，使用Hexo 3.x。但并不代表其他平台无法使用此教程，至少可以参考。</p>
+<h2 id="前提">前提</h2><ul>
+<li>确认已经安装了<a href="http://brew.sh/" target="_blank" rel="external">homebrew</a></li>
+</ul>
+<h2 id="准备工作">准备工作</h2><ol>
+<li><p>安装Git</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装Node.js</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装Hexo命令行工具</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="搭建本地Hexo工作环境">搭建本地Hexo工作环境</h2><p>实际上Hexo只是一个帮你生成静态网站的工具，hexo自带的server模块，感觉只是用来做本地测试的，真正发布时还是推荐用其他服务器。<br>换句话说，你要在多个电脑都使用Hexo来写博客，每个电脑都要配置一个Hexo环境，不过也就是安装上边的3个东西，然后把Hexo的工作目录同步一下就好了。至于怎么同步，你可以用Dropbox，Google dirve，百度云或者基于Git云服务等。</p>
+<h3 id="创建hexo工作目录">创建hexo工作目录</h3><p>这里以Dropbox同步为例，以hexo为工作目录名称，你可以在任何你喜欢的地方、创建你想要的名称的文件夹作为hexo的工作目录。<a id="more"></a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Dropbox</span><br><span class="line">hexo init hexo <span class="comment">#后一个hexo为工作目录名称</span></span><br><span class="line"><span class="built_in">cd</span> hexo</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ~/Dropbox</span><br><span class="line">mkdir hexo</span><br><span class="line"><span class="built_in">cd</span> hexo</span><br><span class="line">hexo init <span class="comment">#默认用当前目录作为hexo工作目录</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>然后使用如下指令启动hexo server。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>看到下边的输出说明hexo server启动成功，用浏览器打开<code>http://0.0.0.0:4000/</code>即可查看效果，又没有一丝感动——真是太简单了！</p>
+<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">INFO  Hexo is running <span class="keyword">at</span> <span class="keyword">http</span>://<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">4000</span>/. Press Ctrl+C <span class="built_in">to</span> <span class="built_in">stop</span>.</span><br></pre></td></tr></table></figure>
+<h3 id="安装几个方便的插件">安装几个方便的插件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Dropbox/hexo</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-feed --save</span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<p><strong>hexo-deployer-git</strong>：方便使用<code>hexo deploy</code>命令发布博客。<br><strong>hexo-generator-feed</strong>：使网站支持RSS订阅。<br><strong>hexo-generator-sitemap</strong>：生成sitemap供搜索引擎抓取，如果你建的私人日记类不想被搜索引擎索引，可以不需要这个。</p>
+<h2 id="部署到Github_pages">部署到Github pages</h2><p><a href="https://pages.github.com/" target="_blank" rel="external">Github pages</a>是让你可以用一个与你Github账户名同名的Repository来建立一个静态网站，网站的网址也是已你的Github账户名为子域名。说起来真绕嘴，还是行动吧。</p>
+<h3 id="配置Github">配置Github</h3><ol>
+<li>前往<a href="https://github.com" target="_blank" rel="external">Github</a>，注册用户，这里以<code>dummy</code>为用户名做示范。</li>
+<li>登录，在主页右下方点击<strong>New Repository</strong>，注意Repository Name必须符合这个格式<code>你的用户名.github.io</code>，本例子应该就是<code>dummy.github.io</code></li>
+<li>然后进入这个repository的页面，找到这个repository https的地址，例如<code>https://github.com/dummy/dummy.github.io.git</code></li>
+<li><p>为Hexo工作目录初始化Git</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Dropbox/hexo</span><br><span class="line">git init</span><br><span class="line">git commit --allow-empty -m <span class="string">'first commit'</span></span><br><span class="line">git remote add origin https://github.com/dummy/dummy.github.io.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改hexo的配置文件</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Dropbox/hexo</span><br><span class="line">vi _config.yml</span><br></pre></td></tr></table></figure>
+<p> 在<code># Deployment</code>部分，修改内容为如下</p>
+ <figure class="highlight"><table><tr><td class="code"><pre><span class="line"># Deployment&#10;## Docs: http://hexo.io/docs/deployment.html&#10;deploy:&#10;    type: git&#10;    repository: https://github.com/dummy/dummy.github.io.git&#10;    branch: master</span><br></pre></td></tr></table></figure>
+<p> 保存退出。</p>
+</li>
+<li><p>然后你就可以使用hexo命令方便的操作了。</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<p> 渲染并生成你的静态博客网站所需的所有文件到<code>hexo/public</code>中去</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p> 发布生成好的网站到dummy.github.io的repository里去（这是由之前安装的插件<code>hexo-deployer-git</code>来完成的，如果没有安装请用Git命令push上去）。</p>
+</li>
+<li>用浏览器打开<code>http://dummy.github.io</code>，看看效果吧。</li>
+</ol>
+<h3 id="hexo的简化指令">hexo的简化指令</h3><p>可以使用简化指令来加速我们以后的操作。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n <span class="comment">#new</span></span><br><span class="line">hexo g <span class="comment">#generate</span></span><br><span class="line">hexo s <span class="comment">#server</span></span><br><span class="line">hexo d <span class="comment">#deploy</span></span><br></pre></td></tr></table></figure>
+<h3 id="主题Theme">主题Theme</h3><p>本博客用主题的是<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a>，国内作者，风格清新现代，集成了多说的评论系统，个人十分喜欢。<br>其他的请自行去 <a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">https://github.com/hexojs/hexo/wiki/Themes</a> 查找。</p>
+<p>主题的安装方法都一样，这里以<strong>yilia</strong>为例</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Dropbox/hexo</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br><span class="line">vi _config.yml</span><br><span class="line"><span class="comment"># 修改为 theme: yilia</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<font color="slategrey">作者：<a href="http://zfan.me" target="_blank" rel="external">小米飯</a><br>原文地址：<a href="http://blog.zfan.me/2015/08/31/3分钟快速在Github-pages上免费搭建Hexo博客" target="_blank" rel="external">http://blog.zfan.me/2015/08/31/3分钟快速在Github-pages上免费搭建Hexo博客</a><br>转载、参考请注明出处，如果觉得文章对你有帮助，也请通过留言来支持一下。</font>]]></content>
     <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    <![CDATA[<h2 id="前言">前言</h2><p>搜索Markdown和Evernote时无意之中发现了<strong>Hexo</strong>，一个支持Markdown的静态博客框架，本人界面控，看见 <a href="http://hexo.io">http://hexo.io</a> 的页面就走不动了。</p>
+<p><strong>Hexo</strong>的配置真是超乎想象得简单，以至于我手都放在键盘上却不知道从何说起了。官方文档还有非常完善的中文版本，本人是只读了官方文档就搭好了，有想自己体验的同学可以移步 <a href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a> 。</p>
+<p><strong>注意：</strong>本文所写步骤是在 Mac Yosemite 10.10 上完成，使用Hexo 3.x。但并不代表其他平台无法使用此教程，至少可以参考。</p>
+<h2 id="前提">前提</h2><ul>
+<li>确认已经安装了<a href="http://brew.sh/">homebrew</a></li>
+</ul>
+<h2 id="准备工作">准备工作</h2><ol>
+<li><p>安装Git</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装Node.js</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install node</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装Hexo命令行工具</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="搭建本地Hexo工作环境">搭建本地Hexo工作环境</h2><p>实际上Hexo只是一个帮你生成静态网站的工具，hexo自带的server模块，感觉只是用来做本地测试的，真正发布时还是推荐用其他服务器。<br>换句话说，你要在多个电脑都使用Hexo来写博客，每个电脑都要配置一个Hexo环境，不过也就是安装上边的3个东西，然后把Hexo的工作目录同步一下就好了。至于怎么同步，你可以用Dropbox，Google dirve，百度云或者基于Git云服务等。</p>
+<h3 id="创建hexo工作目录">创建hexo工作目录</h3><p>这里以Dropbox同步为例，以hexo为工作目录名称，你可以在任何你喜欢的地方、创建你想要的名称的文件夹作为hexo的工作目录。]]>
+    
     </summary>
+    
+      <category term="Hexo" scheme="http://zfanswer.github.io/tags/Hexo/"/>
+    
+      <category term="教程" scheme="http://zfanswer.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[test]]></title>
-    <link href="http://zfanswer.github.io/2015/08/28/test/"/>
-    <id>http://zfanswer.github.io/2015/08/28/test/</id>
-    <published>2015-08-28T06:22:03.000Z</published>
-    <updated>2015-08-28T08:02:29.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="用ufw替代iptables">用ufw替代iptables</h1><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">wget <span class="string">https:</span><span class="comment">//launchpad.net/ufw/0.33/0.33/+download/ufw-0.33.tar.gz</span></span><br><span class="line">tar zxvf ufw-<span class="number">0.33</span>.tar.gz</span><br><span class="line">cd ufw-<span class="number">0.33</span></span><br><span class="line">python ./setup.py install</span><br><span class="line">chmod -R g-w <span class="regexp">/etc/</span>ufw <span class="regexp">/lib/</span>ufw <span class="regexp">/etc/</span><span class="keyword">default</span><span class="regexp">/ufw /</span>usr<span class="regexp">/sbin/</span>ufw</span><br></pre></td></tr></table></figure>
-<p>安装完后查看ufw是否启动了<code>ufw status</code>，是inactive的情况下进行如下操作。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">ufw <span class="operator"><span class="keyword">reset</span></span><br><span class="line">ufw <span class="keyword">default</span> deny</span><br><span class="line">ufw <span class="keyword">allow</span> <span class="number">22</span></span><br><span class="line">ufw <span class="keyword">allow</span> <span class="number">80</span></span><br><span class="line">ufw <span class="keyword">allow</span> <span class="number">443</span></span><br><span class="line">ufw <span class="keyword">allow</span> <span class="number">21</span></span><br><span class="line">ufw <span class="keyword">allow</span> <span class="number">60000</span>:<span class="number">60099</span>/tcp</span><br><span class="line">ufw <span class="keyword">allow</span> <span class="number">943</span></span><br><span class="line">ufw <span class="keyword">allow</span> <span class="number">1194</span></span><br><span class="line"></span><br><span class="line">ufw <span class="keyword">enable</span></span></span><br></pre></td></tr></table></figure>
-<p>22是ssh，80是http，443是https，21是ftp，<code>60000:60099/tcp</code>是ftp over tls时设置的port域，943和1194是openvpn。<br>其他的port根据需要自己再添加。</p>
-<h5 id="打开log转发">打开log转发</h5><p>创建<code>vi /etc/rsyslog.d/20-ufw.conf</code>，内容如下</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:msg,<span class="keyword">contains</span>,<span class="string">"[UFW "</span> /var/<span class="command">log</span>/ufw.<span class="command">log</span></span><br></pre></td></tr></table></figure>
-<p>重启 rsyslog service</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">service</span> rsyslog restart</span><br></pre></td></tr></table></figure>
-<p>然后就可以看到log出现在 <code>/var/log/ufw.log</code>，很多攻击信息的。</p>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://zfanswer.github.io/2015/08/28/hello-world/"/>
+    <id>http://zfanswer.github.io/2015/08/28/hello-world/</id>
+    <published>2015-08-28T06:30:00.000Z</published>
+    <updated>2015-08-31T08:50:52.000Z</updated>
+    <content type="html"><![CDATA[<p><strong>Hello World, Hello Hexo.</strong></p>
+<p>有几年没写过博客了，最近才知道现在流行这种生成静态页面的博客网站，轻量而且支持Markdown，最近为了Evernote不支持Markdown的事十分头疼，就拿这个来玩了一下，还发现如此小清新的模板，就拾起来做自己的博客吧，希望自己能坚持下去。</p>
+<p>顺便让我来用这个博客的第一篇日志来缅怀一下之前阵亡的博客们吧。</p>
+<p>最早用的是MSN的博客，基本没什么可订制的地方，只是朋友之间的评论让我在上边坚持吐槽了2年。然后众所周知的MSN关闭了博客服务，我就跳到了Wordpress阵营，还为此第一次买了租赁服务器。由于各(lan)种(duo)的原因，3年前参加工作后便停止了更新。</p>
+<p>还好我都有备份，偶尔翻看一下好几年前写的东西，觉得还是有必要把一些东西留下来，希望这次能坚持的长一些，变成了IT民工，能记(tu)录(cao)的东西多了一些。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="用ufw替代iptables">用ufw替代iptables</h1><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><b]]>
+    <![CDATA[<p><strong>Hello World, Hello Hexo.</strong></p>
+<p>有几年没写过博客了，最近才知道现在流行这种生成静态页面的博客网站，轻量而且支持Markdown，最近为了Evernote不支持Markdown的事十分头疼，就拿这个来玩了一下，]]>
     </summary>
-    
-      <category term="CentOS" scheme="http://zfanswer.github.io/tags/CentOS/"/>
     
   </entry>
   
