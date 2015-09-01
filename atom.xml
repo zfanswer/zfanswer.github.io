@@ -4,7 +4,7 @@
   <subtitle><![CDATA[问君能有几多愁，恰似听那PDM讲需求。]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://zfanswer.github.io/"/>
-  <updated>2015-08-31T15:41:45.000Z</updated>
+  <updated>2015-09-01T00:17:44.000Z</updated>
   <id>http://zfanswer.github.io/</id>
   
   <author>
@@ -15,11 +15,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[用SSH key免去github提交时输入密码]]></title>
+    <link href="http://zfanswer.github.io/2015/09/01/%E7%94%A8SSH-key%E5%85%8D%E5%8E%BBgithub%E6%8F%90%E4%BA%A4%E6%97%B6%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81/"/>
+    <id>http://zfanswer.github.io/2015/09/01/用SSH-key免去github提交时输入密码/</id>
+    <published>2015-08-31T16:09:27.000Z</published>
+    <updated>2015-09-01T00:17:44.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="背景">背景</h3><p>开始使用Hexo后，发布文章或做些主题上的修改总要不断的push到Github上，每次都输入用户名和密码实在是太麻烦了。<br>所以想使用SSH Key来免去这一步骤，不过要<strong>注意</strong>的是，一定只在你受信任的机器上这么做。</p>
+<h3 id="操作">操作</h3><h4 id="修改hexo配置文件">修改hexo配置文件</h4><p>前往你的<code>dummy.github.io</code> repository，查看其SSH的URL，应该是如下格式的，</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git@github<span class="class">.com</span>:dummy/dummy<span class="class">.github</span><span class="class">.io</span><span class="class">.git</span></span><br></pre></td></tr></table></figure>
+<p>修改<code>_config.xml</code>文件中Git repository的URL</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"># Deployment&#10;## Docs: http://hexo.io/docs/deployment.html&#10;deploy:&#10;  type: git&#10;  repository: git@github.com:dummy/dummy.github.io.git&#10;  branch: master</span><br></pre></td></tr></table></figure>
+<h4 id="为Github生成一个新的密钥">为Github生成一个新的密钥</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure>
+<p>一路回车结束它提出的所有问题，你应该可以看到如下输出。</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">Your identification has been saved <span class="keyword">in</span> <span class="regexp">~/.ssh/</span>id_rsa.</span><br><span class="line">Your <span class="keyword">public</span> key has been saved <span class="keyword">in</span> <span class="regexp">~/.ssh/</span>id_rsa.pub.</span><br></pre></td></tr></table></figure>
+<h4 id="将SSH_Key加入Github中">将SSH Key加入Github中</h4><p>前往 <a href="https://github.com/settings/ssh" target="_blank" rel="external">https://github.com/settings/ssh</a> ，点击<code>Add SSH  key</code>，在title中填入你能分辨这个key储存位置的名字，然后把<code>~/.ssh/id_rsa.pub</code>中的内容复制到下边的内容框中，添加。<br>然后打开Terminal进行连接测试。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>应该会看到如下输出：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">The authenticity of host <span class="string">'github.com (207.97.227.239)'</span> can<span class="string">'t be established. RSA key fingerprint is 11:22:aa:33:44:55:dd:66:77:bb:88:99:ee:ff:00:cc. Are you sure you want to continue connecting (yes/no)? </span><br><span class="line">#输入yes回车</span><br><span class="line"></span><br><span class="line">Hi xxxxx! You'</span>ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+<p>然后就可以愉快的使用Hexo部署了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<h4 id="为Github生成一个新的密钥（简便方法）">为Github生成一个新的密钥（简便方法）</h4><p>直接下载Github的客户端登录，它会自动生成SSH Key并绑定你的账户。</p>
+<p><br> </p>
+<font color="slategrey">作者：<a href="http://zfan.me" target="_blank" rel="external">小米飯</a><br>原文地址：<a href="http://blog.zfan.me/2015/09/01/用SSH-key免去github提交时输入密码" target="_blank" rel="external">http://blog.zfan.me/2015/09/01/用SSH-key免去github提交时输入密码</a><br>转载、参考请注明出处，如果觉得文章对你有帮助，也请通过留言来支持一下。</font>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="背景">背景</h3><p>开始使用Hexo后，发布文章或做些主题上的修改总要不断的push到Github上，每次都输入用户名和密码实在是太麻烦了。<br>所以想使用SSH Key来免去这一步骤，不过要<strong>注意</strong>的是，一定只在你受信任的]]>
+    </summary>
+    
+      <category term="github" scheme="http://zfanswer.github.io/tags/github/"/>
+    
+      <category term="hexo" scheme="http://zfanswer.github.io/tags/hexo/"/>
+    
+      <category term="ssh" scheme="http://zfanswer.github.io/tags/ssh/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[3分钟快速在Github pages上免费搭建Hexo博客]]></title>
     <link href="http://zfanswer.github.io/2015/08/31/3%E5%88%86%E9%92%9F%E5%BF%AB%E9%80%9F%E5%9C%A8Github-pages%E4%B8%8A%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/"/>
     <id>http://zfanswer.github.io/2015/08/31/3分钟快速在Github-pages上免费搭建Hexo博客/</id>
     <published>2015-08-31T04:53:42.000Z</published>
-    <updated>2015-08-31T15:41:45.000Z</updated>
+    <updated>2015-08-31T16:11:24.000Z</updated>
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>搜索Markdown和Evernote时无意之中发现了<strong>Hexo</strong>，一个支持Markdown的静态博客框架，本人界面控，看见 <a href="http://hexo.io" target="_blank" rel="external">http://hexo.io</a> 的页面就走不动了。</p>
 <p><strong>Hexo</strong>的配置真是超乎想象得简单，以至于我手都放在键盘上却不知道从何说起了。官方文档还有非常完善的中文版本，本人是只读了官方文档就搭好了，有想自己体验的同学可以移步 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a> 。</p>
 <p><strong>注意：</strong>本文所写步骤是在 Mac Yosemite 10.10 上完成，使用Hexo 3.x。但并不代表其他平台无法使用此教程，至少可以参考。</p>
@@ -95,7 +131,7 @@
     
     </summary>
     
-      <category term="Hexo" scheme="http://zfanswer.github.io/tags/Hexo/"/>
+      <category term="hexo" scheme="http://zfanswer.github.io/tags/hexo/"/>
     
       <category term="教程" scheme="http://zfanswer.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
