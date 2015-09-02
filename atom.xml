@@ -137,7 +137,7 @@
     <link href="http://zfanswer.github.io/2015/08/31/3%E5%88%86%E9%92%9F%E5%BF%AB%E9%80%9F%E5%9C%A8Github-pages%E4%B8%8A%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/"/>
     <id>http://zfanswer.github.io/2015/08/31/3分钟快速在Github-pages上免费搭建Hexo博客/</id>
     <published>2015-08-31T04:53:42.000Z</published>
-    <updated>2015-08-31T16:11:24.000Z</updated>
+    <updated>2015-09-02T04:17:30.000Z</updated>
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>搜索Markdown和Evernote时无意之中发现了<strong>Hexo</strong>，一个支持Markdown的静态博客框架，本人界面控，看见 <a href="http://hexo.io" target="_blank" rel="external">http://hexo.io</a> 的页面就走不动了。</p>
 <p><strong>Hexo</strong>的配置真是超乎想象得简单，以至于我手都放在键盘上却不知道从何说起了。官方文档还有非常完善的中文版本，本人是只读了官方文档就搭好了，有想自己体验的同学可以移步 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a> 。</p>
 <p><strong>注意：</strong>本文所写步骤是在 Mac Yosemite 10.10 上完成，使用Hexo 3.x。但并不代表其他平台无法使用此教程，至少可以参考。</p>
@@ -156,7 +156,8 @@
 </li>
 </ol>
 <h2 id="搭建本地Hexo工作环境">搭建本地Hexo工作环境</h2><p>实际上Hexo只是一个帮你生成静态网站的工具，hexo自带的server模块，感觉只是用来做本地测试的，真正发布时还是推荐用其他服务器。<br>换句话说，你要在多个电脑都使用Hexo来写博客，每个电脑都要配置一个Hexo环境，不过也就是安装上边的3个东西，然后把Hexo的工作目录同步一下就好了。至于怎么同步，你可以用Dropbox，Google dirve，百度云或者基于Git云服务等。</p>
-<h3 id="创建hexo工作目录">创建hexo工作目录</h3><p>这里以Dropbox同步为例，以hexo为工作目录名称，你可以在任何你喜欢的地方、创建你想要的名称的文件夹作为hexo的工作目录。<a id="more"></a></p>
+<a id="more"></a>
+<h3 id="创建hexo工作目录">创建hexo工作目录</h3><p>这里以Dropbox同步为例，以hexo为工作目录名称，你可以在任何你喜欢的地方、创建你想要的名称的文件夹作为hexo的工作目录。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Dropbox</span><br><span class="line">hexo init hexo <span class="comment">#后一个hexo为工作目录名称</span></span><br><span class="line"><span class="built_in">cd</span> hexo</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> ~/Dropbox</span><br><span class="line">mkdir hexo</span><br><span class="line"><span class="built_in">cd</span> hexo</span><br><span class="line">hexo init <span class="comment">#默认用当前目录作为hexo工作目录</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
 <p>然后使用如下指令启动hexo server。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
@@ -208,8 +209,7 @@
  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="搭建本地Hexo工作环境">搭建本地Hexo工作环境</h2><p>实际上Hexo只是一个帮你生成静态网站的工具，hexo自带的server模块，感觉只是用来做本地测试的，真正发布时还是推荐用其他服务器。<br>换句话说，你要在多个电脑都使用Hexo来写博客，每个电脑都要配置一个Hexo环境，不过也就是安装上边的3个东西，然后把Hexo的工作目录同步一下就好了。至于怎么同步，你可以用Dropbox，Google dirve，百度云或者基于Git云服务等。</p>
-<h3 id="创建hexo工作目录">创建hexo工作目录</h3><p>这里以Dropbox同步为例，以hexo为工作目录名称，你可以在任何你喜欢的地方、创建你想要的名称的文件夹作为hexo的工作目录。]]>
+<h2 id="搭建本地Hexo工作环境">搭建本地Hexo工作环境</h2><p>实际上Hexo只是一个帮你生成静态网站的工具，hexo自带的server模块，感觉只是用来做本地测试的，真正发布时还是推荐用其他服务器。<br>换句话说，你要在多个电脑都使用Hexo来写博客，每个电脑都要配置一个Hexo环境，不过也就是安装上边的3个东西，然后把Hexo的工作目录同步一下就好了。至于怎么同步，你可以用Dropbox，Google dirve，百度云或者基于Git云服务等。</p>]]>
     
     </summary>
     
