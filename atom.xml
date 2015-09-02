@@ -35,7 +35,7 @@
     <link href="http://zfanswer.github.io/2015/09/02/Alfred-2-Workflow-for-Hexo/"/>
     <id>http://zfanswer.github.io/2015/09/02/Alfred-2-Workflow-for-Hexo/</id>
     <published>2015-09-01T15:45:58.000Z</published>
-    <updated>2015-09-02T03:09:43.000Z</updated>
+    <updated>2015-09-02T04:11:18.000Z</updated>
     <content type="html"><![CDATA[<h3 id="前言">前言</h3><p><a href="https://www.alfredapp.com/" target="_blank" rel="external">Alfred</a>，用Mac的童鞋没有没听说这个神器的吧。我之前用过一阵免费v1，后来就用Yosemite升级的spotlight了。前几天见到同事用，貌似功能多了不少，就又去官网看了看，发现已经到v2了，看了看介绍没有任何犹豫，买了个Mage Supporter的License开始了各种爽。</p>
 <p>最近比较迷<strong>Hexo</strong>，就想着用Alfred Workflow集成一下，于是有了这篇文章。</p>
 <h3 id="Alfred_Workflow简介">Alfred Workflow简介</h3><p><a href="https://www.alfredapp.com/" target="_blank" rel="external">Alfred</a>基本功能就不做介绍了，直接去官网或者随便搜一下应该就有很多推荐这个<strong>神器</strong>的文章。<br>Alfred的Workflow就是可以让你可以自定义几个组件，把它们连起来做一些奇妙的事情。</p>
@@ -53,11 +53,11 @@
 
 <p>可使用的Keyword和支持的Hexo指令：  </p>
 <ul>
-<li><strong>hexon</strong>：等同于<code>hexo new post</code>，后边写文章题目。</li>
+<li><strong>hexon</strong>：等同于<code>hexo new</code>，<strong>支持原命令的参数</strong>，后边写文章题目。</li>
 <li><strong>hexoo</strong>：没有等同的hexo命令，只是按更新日期由新到旧地列出你<code>source/_posts/</code>文件夹中的所有文件，选中后回车将使用系统默认软件打开。</li>
 <li><strong>hexog</strong>：等同于<code>hexo generate</code>，不支持参数。</li>
 <li><strong>hexod</strong>：等同于<code>hexo deploy</code>，不支持参数，所以如果是发布到Git类的云服务时，请使用SHH Key免去输入密码这一步骤。</li>
-<li><strong>hexos</strong>：等同于<code>hexo server</code>，<strong>支持</strong>添加参数，如<code>-i 192.168.1.1 -p 4001</code>，<strong>注意</strong>这个命令会打开Terminal，因为你最后需要用<code>Ctrl+C</code>关闭服务器。</li>
+<li><strong>hexos</strong>：等同于<code>hexo server</code>，<strong>支持原命令的参数</strong>，如<code>-i 192.168.1.1 -p 4001</code>，<strong>注意</strong>这个命令会打开Terminal，因为你最后需要用<code>Ctrl+C</code>关闭服务器。</li>
 <li><strong>hexoc</strong>：等同于<code>hexo clean</code>，不支持参数。</li>
 </ul>
 <p>下图就是整个Workflow的编辑页面，其实算是比较简单的搭配，<code>Keyword</code>=&gt;<code>Run Script</code>居多，然后执行结果会通过通知消息显示出来。</p>
