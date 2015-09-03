@@ -15,12 +15,12 @@ Alfred Wo">
 <meta property="og:description" content="前言Alfred，用Mac的童鞋没有没听说这个神器的吧。我之前用过一阵免费v1，后来就用Yosemite升级的spotlight了。前几天见到同事用，貌似功能多了不少，就又去官网看了看，发现已经到v2了，看了看介绍没有任何犹豫，买了个Mage Supporter的License开始了各种爽。
 最近比较迷Hexo，就想着用Alfred Workflow集成一下，于是有了这篇文章。
 Alfred Wo">
-<meta property="og:image" content="http://zfanswer.github.io/./snapshot3.png">
-<meta property="og:image" content="http://zfanswer.github.io/./snapshot4.png">
-<meta property="og:image" content="http://zfanswer.github.io/./snapshot1.png">
-<meta property="og:image" content="http://zfanswer.github.io/./snapshot2.png">
-<meta property="og:image" content="http://zfanswer.github.io/./snapshot5.png">
-<meta property="og:updated_time" content="2015-09-02T04:11:18.000Z">
+<meta property="og:image" content="http://zfanswer.github.io/assets/snapshot3.png">
+<meta property="og:image" content="http://zfanswer.github.io/assets/snapshot4.png">
+<meta property="og:image" content="http://zfanswer.github.io/assets/snapshot1.png">
+<meta property="og:image" content="http://zfanswer.github.io/assets/snapshot2.png">
+<meta property="og:image" content="http://zfanswer.github.io/assets/snapshot5.png">
+<meta property="og:updated_time" content="2015-09-03T14:57:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Alfred 2 Workflow for Hexo">
 <meta name="twitter:description" content="前言Alfred，用Mac的童鞋没有没听说这个神器的吧。我之前用过一阵免费v1，后来就用Yosemite升级的spotlight了。前几天见到同事用，貌似功能多了不少，就又去官网看了看，发现已经到v2了，看了看介绍没有任何犹豫，买了个Mage Supporter的License开始了各种爽。
@@ -227,16 +227,16 @@ Alfred Wo">
 <p>最近比较迷<strong>Hexo</strong>，就想着用Alfred Workflow集成一下，于是有了这篇文章。</p>
 <h3 id="Alfred_Workflow简介">Alfred Workflow简介</h3><p><a href="https://www.alfredapp.com/" target="_blank" rel="external">Alfred</a>基本功能就不做介绍了，直接去官网或者随便搜一下应该就有很多推荐这个<strong>神器</strong>的文章。<br>Alfred的Workflow就是可以让你可以自定义几个组件，把它们连起来做一些奇妙的事情。</p>
 <p>比如官方的例子里<code>Simple Folders Filter</code>，可以让你可以用<code>f</code>关键字加你的输入来搜索你的个人目录中的文件夹。你甚至可以通过很小的改动，就可以让它搜索特定类型的文件，如<code>.md</code>等。</p>
-<a id="more"></a>
-<center>编辑界面<br><img src="./snapshot3.png" alt="编辑界面"></center>
+<center>编辑界面<br><img src="/assets/snapshot3.png" alt="编辑界面"></center>
 
-<center>使用效果<br><img src="./snapshot4.png" alt="使用方法"></center>
+<a id="more"></a>
+<center>使用效果<br><img src="/assets/snapshot4.png" alt="使用方法"></center>
 
 <p>习惯了官方提供的几个小元件和原理后，你可以非常快速地做出让你事半功倍的<strong>快捷方式</strong>。<br>其中最有用的个人感觉应该是<code>Script Filter</code>和<code>Run Script</code>元件了，基本上的Script语言都支持。而且原理特别简单，你的Script需要输出一个规定格式XML（<a href="https://www.alfredapp.com/help/workflows/inputs/script-filter/#example" target="_blank" rel="external">Link</a>，不需要是文件，标准输出就可以），Alfred窗口显示的下拉菜单就是按这个xml内容显示的，每当输入有变动（其实这也可以设置）就会调用一次Script刷新一次下拉菜单。</p>
 <h3 id="Workflow_for_Hexo_v1-0">Workflow for Hexo v1.0</h3><p>先上几张使用效果的图。</p>
-<center>支持的所有指令<br><img src="./snapshot1.png" alt="Hexo Workflow效果"></center>
+<center>支持的所有指令<br><img src="/assets/snapshot1.png" alt="Hexo Workflow效果"></center>
 
-<center>打开你的posts<br><img src="./snapshot2.png" alt=""></center>
+<center>打开你的posts<br><img src="/assets/snapshot2.png" alt=""></center>
 
 <p>可使用的Keyword和支持的Hexo指令：  </p>
 <ul>
@@ -248,7 +248,7 @@ Alfred Wo">
 <li><strong>hexoc</strong>：等同于<code>hexo clean</code>，不支持参数。</li>
 </ul>
 <p>下图就是整个Workflow的编辑页面，其实算是比较简单的搭配，<code>Keyword</code>=&gt;<code>Run Script</code>居多，然后执行结果会通过通知消息显示出来。</p>
-<center>Alfred 2 Workflow for Hexo<br><img src="./snapshot5.png" alt=""></center>
+<center>Alfred 2 Workflow for Hexo<br><img src="/assets/snapshot5.png" alt=""></center>
 
 <p>我已经把这个Workflow放到<a href="https://github.com/zfanswer/alfred-workflow-hexo" target="_blank" rel="external">Github : alfred-workflow-hexo</a>和<a href="http://www.packal.org/workflow/hexo" target="_blank" rel="external">packal - hexo</a>上了，有需要的童鞋可以看看。<a href="http://www.packal.org/workflow/hexo" target="_blank" rel="external">packal</a>是Alfred workflow和theme的索引网站，可以发现很多好东西。</p>
 <h4 id="配置">配置</h4><p>第一版有些粗糙，需要自己去修改Workflow里小组件的参数，让它知道你的hexo文件夹的位置。</p>
