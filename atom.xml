@@ -256,7 +256,7 @@
     <link href="http://zfanswer.github.io/2015/08/28/hello-world/"/>
     <id>http://zfanswer.github.io/2015/08/28/hello-world/</id>
     <published>2015-08-28T06:30:00.000Z</published>
-    <updated>2015-08-31T08:50:52.000Z</updated>
+    <updated>2015-09-04T02:38:58.000Z</updated>
     <content type="html"><![CDATA[<p><strong>Hello World, Hello Hexo.</strong></p>
 <p>有几年没写过博客了，最近才知道现在流行这种生成静态页面的博客网站，轻量而且支持Markdown，最近为了Evernote不支持Markdown的事十分头疼，就拿这个来玩了一下，还发现如此小清新的模板，就拾起来做自己的博客吧，希望自己能坚持下去。</p>
 <p>顺便让我来用这个博客的第一篇日志来缅怀一下之前阵亡的博客们吧。</p>
@@ -267,6 +267,8 @@
     <![CDATA[<p><strong>Hello World, Hello Hexo.</strong></p>
 <p>有几年没写过博客了，最近才知道现在流行这种生成静态页面的博客网站，轻量而且支持Markdown，最近为了Evernote不支持Markdown的事十分头疼，就拿这个来玩了一下，]]>
     </summary>
+    
+      <category term="随笔" scheme="http://zfanswer.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
